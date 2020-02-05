@@ -9,6 +9,10 @@ verify_ssl = true
 jupyterlab = "*"
 pymc3 = "*"
 scikit-learn = "*"
+numpy = "*"
+pandas = "*"
+arviz = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
