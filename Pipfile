@@ -11,8 +11,10 @@ pymc3 = "*"
 scikit-learn = "*"
 numpy = "*"
 pandas = "*"
-arviz = "*"
+arviz = {editable = true,git = "https://github.com/arviz-devs/arviz"}
 matplotlib = "*"
+scipy = "*"
+bokeh = "*"
 
 [requires]
 python_version = "3.7"
