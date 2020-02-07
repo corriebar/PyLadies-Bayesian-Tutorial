@@ -1,6 +1,8 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
+DATA = pd.read_csv("../data/immo_data.csv", dtype={"geo_plz": str})
 
 def iqr(data):
     """compute the interquartile range (excluding nan)"""
@@ -12,6 +14,27 @@ def iqr_rule(data, factor=1.5):
     upper_fence = np.nanquantile(data, 0.75) + factor*iqr_
     lower_fence = np.nanquantile(data, 0.25) - factor*iqr_
     return (data <= upper_fence) & (data >= lower_fence)
+
+def preprocess_data(data):
+    data["totalRent"] = np.where(data["totalRent"].isnull(), data["baseRent"], data["totalRent"])
+
+    # since log doesn't work with 0, we replace 0 with 0.5
+    # seems reasonable tto say hat a rent of 0€ is the same as 50ct
+    data["livingSpace_m"] = np.where(data["livingSpace"] <= 0, 0.5, data["livingSpace"])
+    data["totalRent_m"] = np.where(data["totalRent"] <= 0, 0.5, data["totalRent"])
+    data["logRent"] = np.log(data["totalRent_m"])
+    data["logSpace"] = np.log(data["livingSpace_m"])
+
+    not_outlier = iqr_rule(data["logSpace"], factor=1.5) & iqr_rule(data["logRent"], factor=1.5)
+    d = data[not_outlier]
+    berlin = d[(d.regio1 == "Berlin")]
+
+    berlin["livingSpace_s"] = (berlin["livingSpace"] - berlin["livingSpace"].mean()) / np.std(berlin["livingSpace"])
+    berlin["totalRent_s"] = berlin["totalRent"] / 100
+
+    return berlin
+
+BERLIN = preprocess_data(DATA)
 
 
 def compare_hist(priors, data):
@@ -39,3 +62,11 @@ def draw_models(priors, data):
     ax.set_ylabel("Price [€]",  fontdict={"fontsize": 22})
     ax.set_title("Linear model according to our prior")
     return fig, ax
+
+
+def standardize_area(x):
+    return (x - BERLIN["livingSpace"].mean()) / np.std(BERLIN["livingSpace"])
+
+
+def destandardize_area(x):
+    return (x * np.std(BERLIN["livingSpace"])) + BERLIN["livingSpace"].mean()
