@@ -16,6 +16,3 @@ matplotlib = "*"
 scipy = "*"
 bokeh = "*"
 seaborn = "*"
-
-[requires]
-python_version = "3.7"
