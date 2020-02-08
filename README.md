@@ -8,11 +8,12 @@ Repository with notebooks (and solutions) for my Bayesian tutorial at the PyLadi
 The recommended way to download the code is through git:
 
 ```
-git clone https://github.com/corriebar/PyLadies-Bayesian-Tutorial.git
+git clone git@github.com:corriebar/PyLadies-Bayesian-Tutorial.git
 ```
 This will download all code and create the folder `PyLadies-Bayesian-Tutorial` in your current folder.
 
 ## Install all packages
+### Using Pipenv
 
 I'm using [pipenv](http://docs.pipenv.org/en/latest/install/#installing-pipenv) with Python 3.7 (the code might also work with other Python 3 versions but then you'll need to change the version in the Pipfile).
 
@@ -34,9 +35,18 @@ jupyter lab
 ```
 Then, inside jupyter, pick the according kernel for the notebooks.
 
+### Using Conda
+
+To install the packages using conda, use the following command:
+```
+conda env create -f environment.yml
+conda activate PyLadies-Bayesian-Tutorial
+```
 
 
-If you encounter any problems using pipenv, you can also install the packages from the `requirements.txt` file using pip:
+### Using Pip
+
+You can also install the packages from the `requirements.txt` file using pip:
 ```
 pip install -r requirements.txt
 ```
