@@ -52,3 +52,6 @@ The tutorial consists of four notebooks:
 - In [Dit it converge](notebooks/3_Dit_it_converge.ipynb), we then finally run our first model and check if everything went well. We'll also have a first look at the results.
 - To go [beyond linear](notebooks/4_Beyond_linear.ipnyb), we then extend our linear model by adding some hierarchies. 
 
+The notebooks in the notebook folders contain small exercises and some missing code.
+If you prefer to just tag along with the tutorial or get lost at some point, the full notebooks can be found in [solutions](solutions).
+
