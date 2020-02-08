@@ -65,8 +65,8 @@ The tutorial consists of four notebooks:
 
 - [Introduction](notebooks/1_Introduction.ipynb) which contains some installation checks & extracts the data as well as short motivation why we'd want to use Bayesian methods. If you already know why to use Bayesian methods then this can easily be skipped (except for the installation cell).
 - In [Starting simple](notebooks/2_Starting_simple.ipynb), we have a short look at our data and the start constructing a linear regression in PyMC3. We then learn how to understand your prior and experiment with different priors.
-- In [Dit it converge](notebooks/3_Dit_it_converge.ipynb), we then finally run our first model and check if everything went well. We'll also have a first look at the results.
-- To go [beyond linear](notebooks/4_Beyond_linear.ipnyb), we then extend our linear model by adding some hierarchies. 
+- In [Did it converge](notebooks/3_Did_it_converge.ipynb), we then finally run our first model and check if everything went well. We'll also have a first look at the results.
+- To go [beyond linear](notebooks/4_Beyond_linear.ipynb), we then extend our linear model by adding some hierarchies. 
 
 The notebooks in the notebook folders contain small exercises and some missing code.
 If you prefer to just tag along with the tutorial or get lost at some point, the full notebooks can be found in [solutions](solutions).
