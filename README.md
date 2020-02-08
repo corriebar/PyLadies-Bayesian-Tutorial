@@ -40,9 +40,14 @@ Then, inside jupyter, pick the according kernel for the notebooks.
 To install the packages using conda, use the following command:
 ```
 conda env create -f environment.yml
-conda activate PyLadies-Bayesian-Tutorial
 ```
-
+To activate the environment and start the notebook from it, run
+```
+conda activate PyLadies-Bayesian-Tutorial
+ipython kernel install --user --name=$(basename $(pwd))
+jupyter lab
+# or jupyter notebook
+```
 
 ### Using Pip
 
@@ -50,6 +55,7 @@ You can also install the packages from the `requirements.txt` file using pip:
 ```
 pip install -r requirements.txt
 ```
+
 ## Check that it works and extract the data
 Open the notebook `1_Introduction.ipynb` in the folder notebooks and try to run the first cell. If it can load all the packages and runs without problems then you should be good to go for the rest of the tutorial!
 
