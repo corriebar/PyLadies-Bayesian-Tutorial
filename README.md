@@ -43,3 +43,12 @@ pip install -r requirements.txt
 ## Check that it works and extract the data
 Open the notebook `1_Introduction.ipynb` in the folder notebooks and try to run the first cell. If it can load all the packages and runs without problems then you should be good to go for the rest of the tutorial!
 
+
+# The tutorial
+The tutorial consists of four notebooks:
+
+- [Introduction](notebooks/1_Introduction.ipynb) which contains some installation checks & extracts the data as well as short motivation why we'd want to use Bayesian methods. If you already know why to use Bayesian methods then this can easily be skipped (except for the installation cell).
+- In [Starting simple](notebooks/2_Starting_simple.ipynb), we have a short look at our data and the start constructing a linear regression in PyMC3. We then learn how to understand your prior and experiment with different priors.
+- In [Dit it converge](notebooks/3_Dit_it_converge.ipynb), we then finally run our first model and check if everything went well. We'll also have a first look at the results.
+- To go [beyond linear](notebooks/4_Beyond_linear.ipnyb), we then extend our linear model by adding some hierarchies. 
+
