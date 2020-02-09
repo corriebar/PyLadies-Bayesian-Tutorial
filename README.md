@@ -8,7 +8,7 @@ Repository with notebooks (and solutions) for my Bayesian tutorial at the PyLadi
 The recommended way to download the code is through git:
 
 ```
-git clone git@github.com:corriebar/PyLadies-Bayesian-Tutorial.git
+git clone https://github.com/corriebar/PyLadies-Bayesian-Tutorial.git
 ```
 This will download all code and create the folder `PyLadies-Bayesian-Tutorial` in your current folder.
 
