@@ -2,7 +2,7 @@ name: PyLadies-Bayesian-Tutorial
 channels:
   - defaults
 dependencies:
-  - pymc3
+  - pymc3=3.7
   - scikit-learn
   - matplotlib
   - bokeh
@@ -10,6 +10,6 @@ dependencies:
   - ipykernel
   - jupyterlab
   - pip:
-    - arviz
+    - arviz==0.6.1
 prefix: /home/corrie/anaconda3/envs/PyLadies-Bayesian-Tutorial
 
