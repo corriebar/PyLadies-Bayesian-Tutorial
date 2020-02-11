@@ -27,7 +27,7 @@ def preprocess_data(data):
 
     not_outlier = iqr_rule(data["logSpace"], factor=1.5) & iqr_rule(data["logRent"], factor=1.5)
     d = data[not_outlier]
-    berlin = d[(d.regio1 == "Berlin")]
+    berlin = d[(d.regio1 == "Berlin")].copy()
 
     berlin["livingSpace_s"] = (berlin["livingSpace"] - berlin["livingSpace"].mean()) / np.std(berlin["livingSpace"])
     berlin["totalRent_s"] = berlin["totalRent"] / 100
