@@ -1,7 +1,7 @@
 -e git+https://github.com/arviz-devs/arviz@685b259b8618b9182ed348d0f06f4ca4cf303d44#egg=arviz
 attrs==19.3.0
 backcall==0.1.0
-bleach==3.1.0
+bleach==3.1.4
 bokeh==1.4.0
 cftime==1.0.4.2
 cycler==0.10.0
